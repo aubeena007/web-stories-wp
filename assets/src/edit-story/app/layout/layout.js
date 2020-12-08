@@ -37,6 +37,8 @@ import {
   INSPECTOR_MIN_WIDTH,
   INSPECTOR_MAX_WIDTH,
 } from '../../constants';
+import { PrepublishChecklistProvider } from '../../components/inspector/prepublish';
+import LayoutProvider from './layoutProvider';
 
 const Editor = styled.section.attrs({
   'aria-label': __('Web Stories Editor', 'web-stories'),
@@ -70,15 +72,19 @@ const Area = styled.div`
 // TODO: Fix meta boxes layout.
 function Layout() {
   return (
-    <Editor>
-      <Area area="lib">
-        <Library />
-      </Area>
-      <Workspace />
-      <Area area="metaboxes">
-        <MetaBoxes />
-      </Area>
-    </Editor>
+    <LayoutProvider>
+      <PrepublishChecklistProvider>
+        <Editor>
+          <Area area="lib">
+            <Library />
+          </Area>
+          <Workspace />
+          <Area area="metaboxes">
+            <MetaBoxes />
+          </Area>
+        </Editor>
+      </PrepublishChecklistProvider>
+    </LayoutProvider>
   );
 }
 
