@@ -73,8 +73,8 @@ describe('paginatedMediaGallery', () => {
         setNextPage={() => {}}
       />
     );
-    expect(queryByTestId('attribution')).toBeDefined();
-    expect(queryByTestId('loading-pill')).toBeNull();
+    expect(queryByTestId('attribution')).toBeInTheDocument();
+    expect(queryByTestId('loading-pill')).not.toBeInTheDocument();
   });
 
   it('should render the loading pill when media is loading', () => {
@@ -89,7 +89,7 @@ describe('paginatedMediaGallery', () => {
         setNextPage={() => {}}
       />
     );
-    expect(queryByTestId('loading-pill')).toBeDefined();
-    expect(queryByTestId('attribution')).toBeNull();
+    expect(queryByTestId('loading-pill')).toBeInTheDocument();
+    expect(queryByTestId('attribution')).not.toBeInTheDocument();
   });
 });

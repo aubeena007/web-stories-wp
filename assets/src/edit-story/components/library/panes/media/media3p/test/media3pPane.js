@@ -149,7 +149,7 @@ describe('Media3pPane', () => {
   it('should render <Media3pPane /> with no media', () => {
     const { queryByText } = renderWithTheme(<Media3pPane isActive={true} />);
 
-    expect(queryByText('No media found')).toBeDefined();
+    expect(queryByText('No media found')).toBeInTheDocument();
     expect(getComputedStyle(queryByText('Trending')).display).toBe('none');
   });
 
@@ -203,7 +203,7 @@ describe('Media3pPane', () => {
     useMediaResult.media3p.PROVIDER_1.state.media = MEDIA;
     const { queryByTestId } = renderWithTheme(<Media3pPane isActive={true} />);
 
-    expect(queryByTestId('media-subheading')).toBeDefined();
+    expect(queryByTestId('media-subheading')).toBeInTheDocument();
     expect(
       getComputedStyle(queryByTestId('media-subheading')).display
     ).not.toBe('none');

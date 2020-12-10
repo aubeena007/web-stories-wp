@@ -82,7 +82,7 @@ describe('UploadDropTarget', () => {
     it('should start in a non-dragging mode', () => {
       expect(isDragging()).toBe(false);
       expect(getGlasspane()).toBeNull();
-      expect(isDraggingElement).toHaveAttribute('value', 'false');
+      expect(isDraggingElement).toHaveValue('false');
     });
 
     it('should start dragging on the container', () => {
@@ -125,7 +125,7 @@ describe('UploadDropTarget', () => {
       expect(isDragging()).toBe(true);
       expect(getGlasspane()).not.toBeNull();
       expect(getGlasspane()).toBe(glasspane);
-      expect(isDraggingElement).toHaveAttribute('value', 'true');
+      expect(isDraggingElement).toHaveValue('true');
     });
 
     it('should continue dragging when the container exits', () => {
@@ -165,7 +165,7 @@ describe('UploadDropTarget', () => {
       // State is reset.
       expect(isDragging()).toBe(false);
       expect(getGlasspane()).toBeNull();
-      expect(isDraggingElement).toHaveAttribute('value', 'false');
+      expect(isDraggingElement).toHaveValue('false');
     });
 
     it('should drop and exit the dragging mode', () => {
@@ -177,7 +177,7 @@ describe('UploadDropTarget', () => {
       // State is reset.
       expect(isDragging()).toBe(false);
       expect(getGlasspane()).toBeNull();
-      expect(isDraggingElement).toHaveAttribute('value', 'false');
+      expect(isDraggingElement).toHaveValue('false');
     });
   });
 });

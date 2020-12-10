@@ -77,13 +77,13 @@ describe('CardGallery', () => {
       { id: 'id-4', name: 'other-child' },
     ]);
 
-    const { getAllByTestId } = renderWithProviders(
+    const { getAllByTestId, getByTestId } = renderWithProviders(
       <CardGallery story={template} />
     );
 
     // When the child is not active, it should only appear once
-    const testIds = getAllByTestId('test-child');
-    expect(testIds).toHaveLength(1);
+    const testIds = getByTestId('test-child');
+    expect(testIds).toBeInTheDocument();
 
     // Simulate clicking on Item 3
     fireEvent.click(testIds[0]);
